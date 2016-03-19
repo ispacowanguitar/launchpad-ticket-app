@@ -14,14 +14,28 @@ class MoviesController < ApplicationController
   end
 
   def edit
+    @movie = Movie.find(params[:id])
   end
 
 
   def create
-    @movie = Movie.new(movie_params)    
+    @movie = Movie.create(
+      title: params[:title],
+      description: params[:description],
+      duration: params[:duration],
+      image_url: params[:image]
+    )    
+    redirect_to '/movies'
   end
 
   def update
+    @movie = Movie.find(params[:id])
+    @movie.update(
+      title: params[:title],
+      description: params[:description],
+      duration: params[:duration], 
+      image_url: params[:image]
+      )
   end
 
   def destroy

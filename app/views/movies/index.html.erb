@@ -1,28 +1,23 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
 
-  <h1>Listing Movies</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
+    <div class="row">
       <% @movies.each do |movie| %>
-        <tr>
-          <h3><%= movie.title %></h3>
+      <div class="row col-md-4">
+        <div class="well">
+          <tr>
+            <h3><%= movie.title %></h3>
+            <img src="<%= movie.image_url%>" class="img-responsive">
+            <p><%= movie.description %></p>
 
-          <% if current_user && current_user.role.name = "admin" %>
-            <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-            <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
+            <% if current_user && current_user.role.name = "admin" %>
+              <a href="/movies/<%= movie.id %>/edit">Edit movie</a>
+              <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </tr>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
+    </div>
 
   <br>
 
