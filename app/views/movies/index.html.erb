@@ -26,9 +26,9 @@
 
   <br>
 
-
+  <% if current_user && current_user.role.name = "admin" %>
     <%= link_to 'New Movie', new_movie_path %>
-
+  <% end %> 
 
    
   <% if current_user %>
