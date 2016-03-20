@@ -21,14 +21,18 @@
 
   <br>
 
-  <% if current_user && current_user.role.name = "admin" %>
-    <%= link_to 'New Movie', new_movie_path %>
-  <% end %> 
-
-   
-  <% if current_user %>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  <% end %>  
+  <div class="row col-md-3">
+    <% if current_user && current_user.role.name = "admin" %>
+      <%= link_to 'New Movie', new_movie_path %>
+    <% end %> 
+    <br />
+     
+    <% if current_user %>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+      <%= link_to("ADMIN LOG IN", "users/sign_in") %>
+    <% end %>  
+  </div>
 
 </div>
 

@@ -1,0 +1,12 @@
+<h1>New Auditorium</h1>
+
+  <%= form_tag '/auditorium/create', method: :post do %>
+    <div class="form-group">
+      <%= label_tag :seating_capacity %>
+      <%= text_field_tag(:seating_capacity, nil, {class: "form-control", placeholder: "Enter title"})%>
+    </div>
+
+    <div>
+      <%= button_tag 'create auditorium', class: "btn btn-default" %>
+    </div>
+  <% end %>

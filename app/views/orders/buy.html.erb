@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
       <%= label_tag :email %>
-      <%= text_field_tag :email, "#{current_user.email}", class: "form-control", placeholder: "Enter email" %>
+      <%= text_field_tag :email, "#{current_user.email if current_user}", class: "form-control", placeholder: "Enter email" %>
     </div>
     <div class="form-group">
       <%= label_tag :credit_card_number %>

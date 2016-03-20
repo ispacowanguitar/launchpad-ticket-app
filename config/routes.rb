@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   get '/' => 'movies#index'
   get '/buy/:id' => 'orders#buy'
   post '/order/:id' => 'orders#create'
+
+  get '/admin' => 'admins#index'
+  get '/auditorium/new' => 'admins#new_auditorium'
+  post '/auditorium/create' => 'admins#create_auditorium'
 end
