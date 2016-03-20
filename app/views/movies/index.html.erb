@@ -1,21 +1,20 @@
-<div class="container">
+<div class="container" ng-app="app" ng-controller="movieCtrl">
 
-    <div class="row">
-      <% @movies.each do |movie| %>
-      <div class="row col-md-4">
-        <div class="well">
-          <tr>
-            <h3><%= movie.title %></h3>
-            <img src="<%= movie.image_url%>" class="img-responsive">
-            <p><%= movie.description %></p>
+    <% @movies.each do |movie| %>
+        <div class="row col-md-3" style="margin:2px;">
+          <div class="well" onclick="toggleDescription(this)">
+            <tr>
+              <h4><%= movie.title %></h4>
+              <img src="<%= movie.image_url%>" class="img-responsive">
+              <p style="display:none;"><%= movie.description %></p>
 
-            <% if current_user && current_user.role.name = "admin" %>
-              <a href="/movies/<%= movie.id %>/edit">Edit movie</a>
-              <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </tr>
+              <% if current_user && current_user.role.name = "admin" %>
+                <a href="/movies/<%= movie.id %>/edit">Edit movie</a>
+                <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </tr>
           </div>
-        </div>
+        </div><br />
       <% end %>
     </div>
 
@@ -29,4 +28,23 @@
   <% if current_user %>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
   <% end %>  
+
 </div>
+
+<script>
+
+    var hidden = true;
+  toggleDescription = function(movie) {
+    var description = movie.getElementsByTagName('p')[0]
+
+    if (hidden) { 
+      description.style.display = '';
+      hidden = false;
+    } else {
+      description.style.display = 'none';
+      hidden = true;
+    }
+    
+  }
+
+</script>
