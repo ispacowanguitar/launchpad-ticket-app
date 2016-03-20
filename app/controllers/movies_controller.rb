@@ -7,16 +7,12 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.find(params[:id])
   end
 
   def new
     @movie = Movie.new
   end
-
-  def edit
-    @movie = Movie.find(params[:id])
-  end
-
 
   def create
     @movie = Movie.create(
@@ -26,6 +22,10 @@ class MoviesController < ApplicationController
       image_url: params[:image]
     )    
     redirect_to '/movies'
+  end
+  
+  def edit
+    @movie = Movie.find(params[:id])
   end
 
   def update

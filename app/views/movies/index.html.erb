@@ -2,12 +2,13 @@
 
     <% @movies.each do |movie| %>
         <div class="row col-md-3" style="margin:2px;">
-          <div class="well" onclick="toggleDescription(this)">
+          <div class="well">
             <tr>
-              <h4><%= movie.title %></h4>
-              <img src="<%= movie.image_url%>" class="img-responsive">
-              <p style="display:none;"><%= movie.description %></p>
-
+              <h4><a href="/movies/<%= movie.id %>"><%= movie.title %></a></h4>
+              <div onclick="toggleDescription(this)">
+                <img src="<%= movie.image_url%>" class="img-responsive">
+                <p style="display:none;"><%= movie.description %></p>
+              </div>
               <% if current_user && current_user.role.name = "admin" %>
                 <a href="/movies/<%= movie.id %>/edit">Edit movie</a>
                 <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -33,7 +34,7 @@
 
 <script>
 
-    var hidden = true;
+  var hidden = true;
   toggleDescription = function(movie) {
     var description = movie.getElementsByTagName('p')[0]
 
