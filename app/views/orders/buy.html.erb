@@ -1,0 +1,27 @@
+<div class="container">
+  <h3>Purchase Ticket for: <%= @showing.movie.title %></h3>
+  <h3>Showing at: <%= @showing.start_time.strftime("%b %e, %l:%M %p") %>, in theater <%= @showing.auditorium.id %></h3>
+
+  <%= form_tag "/order/#{@showing.id}", method: :post do %>
+    <div class="form-group">
+      <%= label_tag :name %>
+      <%= text_field_tag(:name, nil, {class: "form-control", placeholder: "Enter name"})%>
+    </div>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, "#{current_user.email}", class: "form-control", placeholder: "Enter email" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :credit_card_number %>
+      <%= text_field_tag :credit_card_number, nil, class: "form-control", placeholder: "Enter your 10 digit credit card number" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :expiration_date %>
+      <%= text_field_tag :expiration_date, nil, class: "form-control", placeholder: "Enter the expiration date" %>
+    </div>
+    <div>
+      <%= button_tag 'Buy ticket', class: "btn btn-default" %>
+    </div>
+  <% end %>
+
+</div>

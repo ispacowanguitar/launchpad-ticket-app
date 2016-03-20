@@ -1,3 +1,29 @@
 <div class="container">
-  <h1><%= @movie.title %></h1>
+
+  <h2><%= @movie.title %></h2>
+  <p>All upcomming showings</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Auditorium</th>
+        <th>Remaining tickets</th>
+      </tr>
+    </thead>
+    <% @showings.each do |showing| %>
+      <tbody>
+        <tr>
+          <td><%= showing.start_time.strftime("%b %e, %l:%M %p") %></td>
+          <td><%= showing.auditorium.id %></td>
+          <td><%= showing.remaining_seats %></td>
+          <% if showing.remaining_seats > 0 %>
+            <td><a href="/buy/<%= showing.id %>">Buy Ticket</a></td>
+          <% else %>
+            <td>SOLD OUT</td>
+          <% end %>
+        </tr>
+      </tbody>
+      <% end %>
+  </table>
+
 </div>

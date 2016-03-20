@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @showings = @movie.showings.order(:start_time)
   end
 
   def new
@@ -23,7 +24,7 @@ class MoviesController < ApplicationController
     )    
     redirect_to '/movies'
   end
-  
+
   def edit
     @movie = Movie.find(params[:id])
   end

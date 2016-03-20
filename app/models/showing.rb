@@ -3,4 +3,9 @@ class Showing < ActiveRecord::Base
   belongs_to :auditorium
 
   has_many :users, through: :tickets
+  has_many :tickets
+
+  def remaining_seats
+    auditorium.seating_capacity - tickets.count
+  end
 end

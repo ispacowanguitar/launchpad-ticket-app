@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/' => 'movies#index'
+  get '/buy/:id' => 'orders#buy'
+  post '/order/:id' => 'orders#create'
 end
