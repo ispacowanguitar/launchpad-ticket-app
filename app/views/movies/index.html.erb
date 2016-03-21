@@ -9,7 +9,7 @@
                 <img src="<%= movie.image_url%>" class="img-responsive">
                 <p style="display:none;"><%= movie.description %></p>
               </div>
-              <% if current_user && current_user.role.name = "admin" %>
+              <% if current_user %>
                 <a href="/movies/<%= movie.id %>/edit">Edit movie</a>
                 <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
