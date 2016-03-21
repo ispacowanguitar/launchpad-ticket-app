@@ -2,9 +2,6 @@
   Role.find_or_create_by(name: role)
 end
 
-User.create!([
-  
-  {first_name: nil, last_name: nil, email: "admin@launchpadtheaters.com", encrypted_password: "$2a$10$oe1DcKirzlKO0srjpJWkaeKH/ERQzssgLxNcfsqxjeW3wqessra9S", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 6, current_sign_in_at: "2016-03-20 19:17:05", last_sign_in_at: "2016-03-19 07:56:04", current_sign_in_ip: "::1", last_sign_in_ip: "::1", role_id: 1}
 ])
 Auditorium.create!([
   {seating_capacity: 150},
