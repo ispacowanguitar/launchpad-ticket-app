@@ -55,7 +55,7 @@ class AdminsController < ApplicationController
   private
 
   def authenticate_admin!
-    unless current_user && current_user.role.name = "admin"
+    unless current_user
       redirect_to '/movies'
     end
   end
