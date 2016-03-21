@@ -2,7 +2,6 @@
   Role.find_or_create_by(name: role)
 end
 
-])
 Auditorium.create!([
   {seating_capacity: 150},
   {seating_capacity: 125},
