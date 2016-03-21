@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get '/admin' => 'admins#index'
   get '/auditorium/new' => 'admins#new_auditorium'
   post '/auditorium/create' => 'admins#create_auditorium'
+  get '/sales' => 'admins#sales'
+  get '/showing/new' => 'admins#new_showing'
+  post '/showing/create' => 'admins#create_showing'
 end

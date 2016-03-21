@@ -1,0 +1,19 @@
+<h1>New Showing</h1>
+
+  <%= form_tag '/showing/create', method: :post do %>
+    <div class="form-group">
+      <%= label_tag :auditorium_number %>
+      <%= text_field_tag(:auditorium_id, nil, {class: "form-control", placeholder: "Enter auditorium number"})%>
+    </div>
+    <div class="form-group">
+      <%= label_tag :movie_title %>
+      <%= select_tag "movie_id", options_from_collection_for_select(@movies, "id", "title") %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :start_time %>
+      <%= datetime_select("start_time", nil) %>
+    </div>
+    <div>
+      <%= button_tag 'create showing', class: "btn btn-default" %>
+    </div>
+  <% end %>

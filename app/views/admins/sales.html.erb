@@ -1,0 +1,38 @@
+<div class="container">
+  
+  <p>sales</p>
+
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Select Movie
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <% @movies.each do |movie| %>  
+    <li><a href="/sales/?movie_id=<%= movie.id %>"><%= movie.title %></a></li>
+  <% end %>
+    <li role="separator" class="divider"></li>
+    <li><a href="/sales/?movie_id=all">View All Sales</a></li>
+  </ul>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Auditorium</th>
+        <th>customer email</th>
+      </tr>
+    </thead>
+    <% @tickets.each do |ticket| %>
+      <tbody>
+        <tr>
+          <td><%= ticket.showing.movie.title %></td>
+          <td><%= ticket.showing.auditorium.id %></td>
+          <td><%= ticket.email if ticket.email %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+  
+</div>
