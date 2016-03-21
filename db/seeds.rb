@@ -36,9 +36,6 @@ Showing.create!([
   {start_time: "2016-03-21 05:19:00", movie_id: 1, auditorium_id: 5}
 ])
 Ticket.create!([
-  {user_id: 1, showing_id: 1, name: nil, email: nil},
-  {user_id: 1, showing_id: 2, name: nil, email: nil},
-  {user_id: 1, showing_id: 1, name: nil, email: nil},
   {user_id: nil, showing_id: 1, name: "MY NAME!!!!", email: "admin@launchpadtheaters.com"},
   {user_id: nil, showing_id: 2, name: "Jimmy Dean", email: "alex@gmail.com"},
   {user_id: nil, showing_id: 15, name: "Alexander Ispa-Cowan", email: "admin@launchpadtheaters.com"},
