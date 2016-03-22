@@ -5,7 +5,7 @@ class Showing < ActiveRecord::Base
   has_many :users, through: :tickets
   has_many :tickets
 
-  validates :start_time :if => :other_movie_overlap?
+  # validates :start_time :if => :other_movie_overlap?
 
   def remaining_seats
     auditorium.seating_capacity - tickets.count
