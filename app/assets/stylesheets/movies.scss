@@ -8,14 +8,14 @@
    }
 }
 
-img {
-width: 215px;
-height: 312px;
+.img-responsive {
+  width: 215px;
+  height: 312px;
 }
 
 .well{ 
     width: 255px;
-    height: 391px;
+    height: 410px;
 }
 
 #layout {
@@ -40,6 +40,7 @@ body {
 
 .description {
   color: white;
+  background-color: gray;
 }
 
 input {

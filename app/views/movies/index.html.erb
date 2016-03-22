@@ -1,6 +1,6 @@
 <div class="container">
 
-    <% @movies.each do |movie| %>
+      <% @movies.each do |movie| %>
         <div class="row col-md-3" style="margin:2px;">
           <div class="well">
             <tr>
@@ -10,24 +10,25 @@
                 <p class="description" style="display:none;"><%= movie.description %></p>
               </div>
               <% if current_user %>
-                <p><% link_to("Edit movie", edit_movie_path(movie)) %></p>
-                <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to("Edit movie", edit_movie_path(movie)) %> <br />
+                <%= link_to 'Delete movie', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             </tr>
           </div>
         </div>
       <% end %>
+ 
+
+  <br />
+
+  <div class="row">
+    <div class="row col-md-12">
+      <% if current_user %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <% else %>
+        <%= link_to("ADMIN LOG IN", "users/sign_in") %>
+      <% end %>  
     </div>
-
-  <br>
-
-  <div class="row col-md-3">
-     
-    <% if current_user %>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-    <% else %>
-      <%= link_to("ADMIN LOG IN", "users/sign_in") %>
-    <% end %>  
   </div>
 
 </div>

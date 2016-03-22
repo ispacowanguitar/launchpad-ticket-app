@@ -7,10 +7,10 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movies = Movie.all
     @movie = Movie.find(params[:id])
     @showings = @movie.showings.order(:start_time)
   end
-
   def new
     @movie = Movie.new
   end
