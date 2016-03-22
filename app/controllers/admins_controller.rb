@@ -38,6 +38,9 @@ class AdminsController < ApplicationController
 
   def create_showing
     start_time = "#{params[:start_time]["(1i)"]}-#{params[:start_time]["(2i)"]}-#{params[:start_time]["(3i)"]} [#{params[:start_time]["(4i)"]}:#{params[:start_time]["(5i)"]}:00]"
+
+    # YYYY-MM-DD [HH:MM:SS]
+
     p start_time
     puts params[:start_time]
     showing = Showing.new(

@@ -7,3 +7,15 @@
     height: auto;
    }
 }
+
+#layout {
+  background-color: gray;
+  text-align: center;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-image: image_url('wood_pattern.png');
+}

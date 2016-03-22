@@ -5,6 +5,7 @@
           <div class="well">
             <tr>
               <h4><a href="/movies/<%= movie.id %>"><%= movie.title %></a></h4>
+              <%= link_to movie.title, movie_path(movie) %>
               <div onclick="toggleDescription(this)">
                 <img src="<%= movie.image_url%>" class="img-responsive">
                 <p style="display:none;"><%= movie.description %></p>
