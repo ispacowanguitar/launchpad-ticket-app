@@ -9,7 +9,7 @@
 <body>
 
 <div id="layout" class="container page-header">
-  <h1>Welcome to Launchpad Theaters</h1>
+  <h1><%= link_to "Welcome to Launchpad Theaters", movies_path, {:style => 'color:black;'} %></h1>
 </div>
 
 <% flash.each do |name, message| %>

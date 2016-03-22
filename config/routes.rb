@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/' => 'movies#index'
-  get '/buy/:id' => 'orders#buy'
+  get '/buy/:id' => 'orders#buy', as: :buy
   post '/order/:id' => 'orders#create'
 
   get '/admin' => 'admins#index'

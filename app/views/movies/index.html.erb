@@ -4,14 +4,13 @@
         <div class="row col-md-3" style="margin:2px;">
           <div class="well">
             <tr>
-              <h4><a href="/movies/<%= movie.id %>"><%= movie.title %></a></h4>
-              <%= link_to movie.title, movie_path(movie) %>
+              <h4 id="title"><%= link_to movie.title, movie_path(movie) %></h4>
               <div onclick="toggleDescription(this)">
                 <img src="<%= movie.image_url%>" class="img-responsive">
-                <p style="display:none;"><%= movie.description %></p>
+                <p class="description" style="display:none;"><%= movie.description %></p>
               </div>
               <% if current_user %>
-                <a href="/movies/<%= movie.id %>/edit">Edit movie</a>
+                <p><% link_to("Edit movie", edit_movie_path(movie)) %></p>
                 <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
             </tr>

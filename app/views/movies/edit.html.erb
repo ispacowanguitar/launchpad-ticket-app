@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Edit <%= @movie.title %></h1>
+  <h3>Edit <%= @movie.title %></h3>
 
   <%= form_tag "/movies/#{@movie.id}", method: :patch do %>
     <div class="form-group">
@@ -24,8 +24,4 @@
   <% end %>
 
   <%= link_to 'Back', movies_path %>
-</div>
-
-<%= link_to 'Show', @movie %> |
-<%= link_to 'Back', movies_path %>
 </div>

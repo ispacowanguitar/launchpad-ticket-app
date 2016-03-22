@@ -19,3 +19,19 @@ body {
   width: 100%;
   background-image: image_url('wood_pattern.png');
 }
+
+.well {
+  background-color: black;
+}
+
+#title, #layout, h1, h2, h3, h4 {
+  font-family: copperplate;
+}
+
+.description {
+  color: white;
+}
+
+input {
+  max-width: 70%;
+} 

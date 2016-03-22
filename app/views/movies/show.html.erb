@@ -17,7 +17,7 @@
           <td><%= showing.auditorium.id %></td>
           <td><%= showing.remaining_seats %></td>
           <% if showing.remaining_seats > 0 %>
-            <td><a href="/buy/<%= showing.id %>">Buy Ticket</a></td>
+            <td><%= link_to("Buy Ticket", buy_path) %></td>
           <% else %>
             <td>SOLD OUT</td>
           <% end %>
